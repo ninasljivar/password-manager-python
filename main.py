@@ -10,11 +10,10 @@ window.config(bg="#1E293B", padx=30, pady=20)
 
 canvas = Canvas()
 canvas.config(bg="#1E293B", width=200, height=190, highlightthickness=0)
-logo_image = PhotoImage(file="password_manager_logo_200x200.png")
+logo_image = PhotoImage(file="assets/password_manager_logo_200x200.png")
 canvas.create_image(100, 95, image=logo_image)
 canvas.grid(column=1, row=0)
 
-# your_email = messagebox.askquestion(title="Your email", message="If you have your favorite email, you can save it here.")
 
 def confirm_action():
     website = website_input.get().strip()
@@ -91,8 +90,6 @@ email_label.grid(column=0, row=2, padx=5, pady=5)
 
 email_input = Entry(window, bg="#39FF14")
 email_input.grid(column=1, row=2, columnspan=2, sticky="nsew", padx=5, pady=5)
-# if your_email:
-#     email_input.insert(0, your_email)
 
 password_label = Label(fg="#FFFFFF", bg="#1E293B", text="Password:", font=("Montserrat Font", 8, "bold"))
 password_label.grid(column=0, row=3, padx=5, pady=5)
