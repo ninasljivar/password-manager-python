@@ -110,8 +110,5 @@ generate_button.grid(column=2, row=3, sticky = "nsew", padx=5, pady=5)
 search_button = Button(fg="#FFFFFF", bg="#0066FF", text="Search", command=search, font=("Montserrat Font", 8, "bold"))
 search_button.grid(row=1, column=2, sticky = "nsew", padx=5, pady=5)
 
-# copied_label = Label(text="", bg="#1E293B", fg="#39FF14", font=("Montserrat Font", 8, "bold"))
-# copied_label.place(x=220, y=300)
-# window.after(3000, copied_label.config(text=""))
 
 window.mainloop()
