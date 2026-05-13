@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import random
 import json
+import pyperclip
 
 
 window = Tk()
@@ -58,9 +59,12 @@ def generate_password():
     for i in range(18):
         random_code = random.randint(32, 126)
         password += chr(random_code)
+    pyperclip.copy(password)
+    copied_label = Label(text="✔ Password copied to clipboard!", bg="#2A3A4D", fg="#39FF14", font=("Montserrat Font", 8, "bold"))
+    copied_label.place(x=220, y=170)
+    window.after(2000, copied_label.destroy)
     password_input.insert(0, password)
     window.clipboard_append(password_input.get())
-
 
 def search():
     try:
@@ -103,10 +107,11 @@ add_button.grid(column=1, row=4, columnspan= 2, sticky="nsew", padx=5, pady=5)
 generate_button = Button(fg="#FFFFFF",bg="#0066FF", text="Generate Password", command=generate_password, font=("Montserrat Font", 8, "bold"))
 generate_button.grid(column=2, row=3, sticky = "nsew", padx=5, pady=5)
 
-search_button = Button(fg="#FFFFFF",bg="#0066FF", text="Search", command=search, font=("Montserrat Font", 8, "bold"))
+search_button = Button(fg="#FFFFFF", bg="#0066FF", text="Search", command=search, font=("Montserrat Font", 8, "bold"))
 search_button.grid(row=1, column=2, sticky = "nsew", padx=5, pady=5)
 
-
-
+# copied_label = Label(text="", bg="#1E293B", fg="#39FF14", font=("Montserrat Font", 8, "bold"))
+# copied_label.place(x=220, y=300)
+# window.after(3000, copied_label.config(text=""))
 
 window.mainloop()

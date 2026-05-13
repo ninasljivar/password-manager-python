@@ -33,6 +33,12 @@ A modern password manager built with Python and Tkinter.
 
 ![Screenshot 3](screenshots/app_search.jpeg)
 
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Run Project
 
 ```bash
